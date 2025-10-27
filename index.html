@@ -19,124 +19,118 @@
     .section { margin-top: 25px; }
     .skills-list, .languages-list { display: inline-block; vertical-align: top; width: 48%; }
     .skills-list ul, .languages-list ul { margin-left: 0; }
+    /* Tabs */
+    .tabs { margin-bottom: 20px; }
+    .tab-link {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #eee;
+      color: #0863A7;
+      margin-right: 2px;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px 5px 0 0;
+      outline: none;
+    }
+    .tab-link.active {
+      background: #fff;
+      color: #222;
+      border-bottom: 2px solid #fff;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-link.active {
+      background: #fff;
+      color: #222;
+      border-bottom: 2px solid #fff;
     @media (max-width:600px) {
       .container { padding: 10px; }
       .skills-list, .languages-list { width: 100%; display: block; }
+      .tab-link { padding: 10px 15px; font-size: 0.95em; }
     }
   </style>
+    <script>
+    function showTab(tab) {
+      // Hide all tab contents
+      document.getElementById('english-content').classList.remove('active');
+      document.getElementById('german-content').classList.remove('active');
+      // Remove active from all tabs
+      document.getElementById('english-tab').classList.remove('active');
+      document.getElementById('german-tab').classList.remove('active');
+      // Show selected tab and content
+      document.getElementById(tab + '-content').classList.add('active');
+      document.getElementById(tab + '-tab').classList.add('active');
+    }
+    window.onload = function() {
+      showTab('english'); // Show English tab by default
+    };
+  </script>
 </head>
 <body>
 <div class="container">
     <h1>Ankur Bhattacharya</h1>
-    <div class="subhead">
-        <b>Career Summary</b><br>
-        I am an experienced IT program and project manager who has led key technology projects in manufacturing, telecom, and consulting. Skilled at turning business needs into practical solutions and finishing projects on time and within budget. I work well with teams of all sizes, solve problems, and help achieve goals. My strengths include managing risks, improving processes, and helping teams work better together. I am adaptable and always learning.
+    <div class="tabs">
+        <button class="tab-link" id="english-tab" onclick="showTab('english')">English</button>
+        <button class="tab-link" id="german-tab" onclick="showTab('german')">German</button>
     </div>
+    <div id="english-content" class="tab-content">
+        <!-- Place your English CV below -->
+        <div class="subhead">
+            <b>Career Summary</b><br>
+            I am an experienced IT program and project manager who has led key technology projects in manufacturing, telecom, and consulting. Skilled at turning business needs into practical solutions and finishing projects on time and within budget. I work well with teams of all sizes, solve problems, and help achieve goals. My strengths include managing risks, improving processes, and helping teams work better together. I am adaptable and always learning.
+        </div>
 
-    <h2>Professional Experience</h2>
-
-    <div class="job">
-        <span class="job-title">IT Program/Project Manager</span>, <span class="job-company">ZF</span>
-        <span class="job-date">May 2023 – Present</span>
-        <ul>
-            <li>Led rollout of digital tools in factories to improve quality and daily work.</li>
-            <li>Managed research on new manufacturing methods to help the business grow.</li>
-            <li>Oversaw creation of cloud-based smart factory solution using Agile methods.</li>
-            <li>Managed customer projects focused on strengthening cybersecurity systems.</li>
-            <li>Handled yearly project budget of about €1.7 million and tracked spending.</li>
-            <li>Reviewed project risks and worked out ways to reduce them.</li>
-            <li>Led teams of 10 to 100 people across different departments.</li>
-            <li>Brought in Agile DevOps tools for better tracking, risk management, and reporting.</li>
-            <li>Worked with various departments and supported purchasing and legal teams to onboard outside partners.</li>
-        </ul>
+        <h2>Professional Experience</h2>
+        <!-- Copy your English CV experience section here -->
+        <!-- Example for ZF, continue below with others as before -->
+        <div class="job">
+            <span class="job-title">IT Program/Project Manager</span>, <span class="job-company">ZF</span>
+            <span class="job-date">May 2023 – Present</span>
+            <ul>
+                <li>Led rollout of digital tools in factories to improve quality and daily work.</li>
+                <li>Managed research on new manufacturing methods to help the business grow.</li>
+                <li>Oversaw creation of cloud-based smart factory solution using Agile methods.</li>
+                <li>Managed customer projects focused on strengthening cybersecurity systems.</li>
+                <li>Handled yearly project budget of about €1.7 million and tracked spending.</li>
+                <li>Reviewed project risks and worked out ways to reduce them.</li>
+                <li>Led teams of 10 to 100 people across different departments.</li>
+                <li>Brought in Agile DevOps tools for better tracking, risk management, and reporting.</li>
+                <li>Worked with various departments and supported purchasing and legal teams to onboard outside partners.</li>
+            </ul>
+        </div>
+        <!-- Add other jobs, education, certifications, skills & languages as in previous version -->
+        <!-- ... -->
     </div>
+    <div id="german-content" class="tab-content">
+        <!-- Place your German CV below -->
+        <!-- Example: -->
+        <div class="subhead">
+            <b>Berufsprofil</b><br>
+            Ich bin ein erfahrener IT-Programm- und Projektmanager mit Führungsverantwortung für Technologieprojekte in Fertigung, Telekommunikation und Beratung. Ich setze Geschäftsanforderungen in praxisnahe Lösungen um und sorge für termingerechte, budgetkonforme Projektdurchführung. Meine Stärken liegen im Risikomanagement, Prozessverbesserung und in der erfolgreichen Teamarbeit. Ich passe mich neuen Situationen an und lerne schnell dazu.
+        </div>
 
-    <div class="job">
-        <span class="job-title">Senior IT Implementation Manager</span>, <span class="job-company">Vodafone</span>
-        <span class="job-date">July 2020 – April 2023</span>
-        <ul>
-            <li>Led improvements to the eSIM system, making it work better for customers.</li>
-            <li>Managed project budgets and staff to keep projects on track.</li>
-            <li>Served as Product Owner for a catalog management tool, ensuring fit with Vodafone’s products.</li>
-            <li>Worked with stakeholders, kept the product backlog updated, and set clear sprint goals.</li>
-        </ul>
+        <h2>Berufserfahrung</h2>
+        <!-- Füge deinen deutschen Lebenslaufabschnitt hier ein -->
+        <div class="job">
+            <span class="job-title">IT Programm-/Projektmanager</span>, <span class="job-company">ZF</span>
+            <span class="job-date">Mai 2023 – Gegenwart</span>
+            <ul>
+                <li>Leitung der Einführung digitaler Werkzeuge in Werken zur Qualitäts- und Prozessverbesserung.</li>
+                <li>Management von Forschungsprojekten zu neuen Fertigungsmethoden.</li>
+                <li>Aufbau einer Cloud-basierten Smart Factory-Lösung mit agilen Methoden.</li>
+                <li>Projektleitung für Kunden zur Stärkung der Cybersicherheits-Infrastruktur.</li>
+                <li>Verantwortung für das jährliche Projektbudget von etwa 1,7 Millionen €.</li>
+                <li>Analyse und Minimierung von Projektrisiken.</li>
+                <li>Führung von bereichsübergreifenden Teams mit 10 bis 100 Mitarbeitenden.</li>
+                <li>Einführung von DevOps-Tools für bessere Nachverfolgung und Risikomanagement.</li>
+                <li>Zusammenarbeit mit verschiedenen Abteilungen und Unterstützung beim Onboarding externer Partner.</li>
+            </ul>
+        </div>
+        <!-- Weitere Stationen, Ausbildung, Zertifikate, Fähigkeiten & Sprachen wie im englischen Tab -->
+        <!-- ... -->
     </div>
-
-    <div class="job">
-        <span class="job-title">IT Consultant</span>, <span class="job-company">Accenture, MSG, Trendig, Cimt</span>
-        <span class="job-date">June 2017 – June 2020</span>
-        <ul>
-            <li>Guided software testing work in cars, public services, and banking, from reviewing requirements to tracking issues.</li>
-            <li>Built test automation setups with Selenium for faster, reliable testing.</li>
-            <li>Created and taught training sessions for software testing certifications.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <span class="job-title">Senior Software Engineer</span>, <span class="job-company">Ericsson</span>
-        <span class="job-date">February 2010 – May 2017</span>
-        <ul>
-            <li>Managed software testing for billing and support systems with teams in India, Brazil, and Sweden.</li>
-            <li>Helped refine product goals and worked with design teams for better results.</li>
-            <li>Ran team meetings using agile methods to keep improvements going.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <span class="job-title">Software Engineer</span>, <span class="job-company">LHS Telekommunikation</span>
-        <span class="job-date">February 2007 – January 2010</span>
-        <ul>
-            <li>Designed and carried out tests for telecom systems, tracked problems, and worked with global teams.</li>
-        </ul>
-    </div>
-
-    <h2>Education</h2>
-    <div class="section">
-        <ul>
-            <li>Executive MBA, ESCP Europe (Paris, Berlin, London)</li>
-            <li>MBA, Edinburgh Business School, Heriot-Watt University, Edinburgh, UK</li>
-            <li>Bachelor of Engineering, Computer Science, Dr. Babasaheb Ambedkar Marathwada University, Aurangabad, India</li>
-        </ul>
-    </div>
-
-    <h2>Certifications</h2>
-    <div class="section">
-        <ul>
-            <li>AI for Everyone, DeepLearning.AI</li>
-            <li>Generative AI Overview for Project Managers, PMI</li>
-            <li>SAFe 5 Practitioner, Scaled Agile Inc.</li>
-            <li>ISTQB Advanced Level Test Manager, ISTQB</li>
-            <li>Professional Scrum Master PSM I, scrum.org</li>
-        </ul>
-    </div>
-
-    <h2>Skills & Languages</h2>
-    <div class="skills-list">
-        <b>Methods:</b>
-        <ul>
-            <li>Agile, Scrum, Project Management, Waterfall, Kanban, DevOps</li>
-        </ul>
-        <b>Technologies:</b>
-        <ul>
-            <li>Telecom Systems, Microservices, REST APIs, Databases, Cloud</li>
-        </ul>
-        <b>Tools:</b>
-        <ul>
-            <li>Jira, Confluence, MS Office, Git, Azure DevOps, Selenium, Robot Framework, HP-ALM</li>
-        </ul>
-        <b>Other skills:</b>
-        <ul>
-            <li>Working with different stakeholders, adapting to new cultures, quick learner</li>
-        </ul>
-    </div>
-    <div class="languages-list">
-        <b>Languages:</b>
-        <ul>
-            <li>German (fluent)</li>
-            <li>English (fluent)</li>
-        </ul>
-    </div>
-
 </div>
 </body>
 </html>
