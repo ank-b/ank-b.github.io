@@ -62,12 +62,32 @@
     }
     /* PRINT STYLES */
     @media print {
-      body { background: #fff !important; }
-      .tabs, .print-btn { display: none !important; }
-      #english-content, #german-content { display: none !important; }
-      .tab-content.print-active { display: block !important; }
-      .container { box-shadow: none !important; padding: 1em !important; }
+      body { 
+        background: #fff !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .tabs { display: none !important; }
+      .print-btn { display: none !important; }
+      .container {
+        box-shadow: none !important; 
+        padding: 0.5in !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+      #english-content { display: none !important; }
+      #german-content { display: none !important; }
+      .tab-content {
+        display: none !important;
+        page-break-inside: avoid;
+      }
+      .tab-content.print-active { 
+        display: block !important; 
+      }
+      h1, h2, h3, p, ul, li { page-break-inside: avoid; }
+      .job { page-break-inside: avoid; }
     }
+
   </style>
   <script>
     function showTab(tab) {
@@ -83,21 +103,29 @@
     };
 
     function printActiveCV() {
-      // Set .print-active on the right tab-content for print media query
+      // Remove print-active from both
       document.getElementById('english-content').classList.remove('print-active');
       document.getElementById('german-content').classList.remove('print-active');
+      
+      // Add print-active to the currently visible tab
       if (document.getElementById('english-content').classList.contains('active')) {
         document.getElementById('english-content').classList.add('print-active');
-      } else if (document.getElementById('german-content').classList.contains('active')) {
+      } else {
         document.getElementById('german-content').classList.add('print-active');
       }
-      window.print();
-      // Optional: remove .print-active class after printing (for safety)
+      
+      // Wait a moment for DOM to update, then print
+      setTimeout(() => {
+        window.print();
+      }, 100);
+      
+      // Clean up after printing
       setTimeout(() => {
         document.getElementById('english-content').classList.remove('print-active');
         document.getElementById('german-content').classList.remove('print-active');
-      }, 1000);
+      }, 1500);
     }
+
   </script>
 </head>
 <body>
