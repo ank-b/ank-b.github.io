@@ -46,23 +46,6 @@
       .skills-list, .languages-list { width: 100%; display: block; }
       .tab-link { padding: 10px 15px; font-size: 0.95em; }
     }
-    .inline-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5em;
-      margin-bottom: 10px;
-    }
-    
-    .inline-list::after {
-      content: '';
-    }
-    
-    /* Optional: Remove gap after the last item */
-    .inline-list > *:not(:last-child)::after {
-      content: ',';
-      margin-right: 0.25em;
-    }
-
   </style>
   <script>
     function showTab(tab) {
@@ -234,15 +217,28 @@
       <h2>Skills & Languages</h2>
       <div class="skills-list">
         <b>Methods:</b>
-        <div class="inline-list">Agile, Scrum, Project Management, Waterfall, Kanban, DevOps</div>
+        <ul>
+          <li>Agile, Scrum, Project Management, Waterfall, Kanban, DevOps</li>
+        </ul>
         <b>Technologies:</b>
-        <div class="inline-list">Telecom Systems, Microservices, REST APIs, Databases, Cloud</div>
+        <ul>
+          <li>Telecom Systems, Microservices, REST APIs, Databases, Cloud</li>
+        </ul>
         <b>Tools:</b>
-        <div class="inline-list">Jira, Confluence, MS Office, Git, Azure DevOps, Selenium, Robot Framework, HP-ALM</div>
+        <ul>
+          <li>Jira, Confluence, MS Office, Git, Azure DevOps, Selenium, Robot Framework, HP-ALM</li>
+        </ul>
         <b>Other skills:</b>
-        <div class="inline-list">Working with different stakeholders, adapting to new cultures, quick learner</div>
+        <ul>
+          <li>Working with different stakeholders, adapting to new cultures, quick learner</li>
+        </ul>
+      </div>
+      <div class="languages-list">
         <b>Languages:</b>
-        <div class="inline-list">German (fluent), English (fluent)</div>
+        <ul>
+          <li>German (fluent)</li>
+          <li>English (fluent)</li>
+        </ul>
       </div>
     </div>
     <div id="german-content" class="tab-content">
